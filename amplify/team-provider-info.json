@@ -1,0 +1,19 @@
+{
+    "relations": {
+        "awscloudformation": {
+            "AuthRoleName": "angularamplifyrelati-relations-20190618132113-authRole",
+            "UnauthRoleArn": "arn:aws:iam::178989187509:role/angularamplifyrelati-relations-20190618132113-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::178989187509:role/angularamplifyrelati-relations-20190618132113-authRole",
+            "Region": "eu-west-2",
+            "DeploymentBucketName": "angularamplifyrelati-relations-20190618132113-deployment",
+            "UnauthRoleName": "angularamplifyrelati-relations-20190618132113-unauthRole",
+            "StackName": "angularamplifyrelati-relations-20190618132113",
+            "StackId": "arn:aws:cloudformation:eu-west-2:178989187509:stack/angularamplifyrelati-relations-20190618132113/32b5fc10-91bb-11e9-be7e-0a4ccf28bdfc"
+        },
+        "categories": {
+            "auth": {
+                "angularamplifyrelatia53b49b9": {}
+            }
+        }
+    }
+}

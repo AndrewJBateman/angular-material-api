@@ -1,0 +1,26 @@
+type Department @model{
+  id: ID!
+  name: String
+  manager: Employee @connection
+  employees: [Employee] @connection(name: "DepartmentEmployees")
+}
+
+type Employee @model{
+  id: ID!
+  name: String
+  age: Int
+  department: Department @connection(name: "DepartmentEmployees")
+  projects: [EmployeeProjects] @connection(name: "EmployeeProjects")
+}
+
+type EmployeeProjects @model (queries: null){
+  id: ID!
+  employee: Employee @connection(name: "EmployeeProjects")
+  project: Project @connection(name: "ProjectEmployees")
+}
+
+type Project @model{
+  id: ID!
+  name: String
+  employees: [EmployeeProjects] @connection(name: "ProjectEmployees")
+}

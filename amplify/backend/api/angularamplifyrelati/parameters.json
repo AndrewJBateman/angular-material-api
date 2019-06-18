@@ -1,0 +1,10 @@
+{
+    "AppSyncApiName": "angularamplifyrelati",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authangularamplifyrelatia53b49b9",
+            "Outputs.UserPoolId"
+        ]
+    }
+}

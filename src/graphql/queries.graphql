@@ -1,0 +1,122 @@
+# this is an auto generated file. This will be overwritten
+query GetDepartment($id: ID!) {
+  getDepartment(id: $id) {
+    id
+    name
+    manager {
+      id
+      name
+      age
+      department {
+        id
+        name
+      }
+      projects {
+        nextToken
+      }
+    }
+    employees {
+      items {
+        id
+        name
+        age
+      }
+      nextToken
+    }
+  }
+}
+query ListDepartments(
+  $filter: ModelDepartmentFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listDepartments(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      manager {
+        id
+        name
+        age
+      }
+      employees {
+        nextToken
+      }
+    }
+    nextToken
+  }
+}
+query GetEmployee($id: ID!) {
+  getEmployee(id: $id) {
+    id
+    name
+    age
+    department {
+      id
+      name
+      manager {
+        id
+        name
+        age
+      }
+      employees {
+        nextToken
+      }
+    }
+    projects {
+      items {
+        id
+      }
+      nextToken
+    }
+  }
+}
+query ListEmployees(
+  $filter: ModelEmployeeFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listEmployees(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      age
+      department {
+        id
+        name
+      }
+      projects {
+        nextToken
+      }
+    }
+    nextToken
+  }
+}
+query GetProject($id: ID!) {
+  getProject(id: $id) {
+    id
+    name
+    employees {
+      items {
+        id
+      }
+      nextToken
+    }
+  }
+}
+query ListProjects(
+  $filter: ModelProjectFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listProjects(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      employees {
+        nextToken
+      }
+    }
+    nextToken
+  }
+}
