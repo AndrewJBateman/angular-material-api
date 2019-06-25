@@ -1,27 +1,104 @@
-# AngularAmplifyRelation
+# Angular Amplify Relation
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.1.
+* App using Angular 8 with AWS amplify and Appsync to create relationships in a GraphQL database stored on a serverless AWS backend.
 
-## Development server
+* An example is used of Departments, Employees and Projects to create one-one, one-many and many-many relationships between database items.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+*** Note: to open web links in a new window use: _ctrl+click on link_**
 
-## Code scaffolding
+## Table of contents
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* [General info](#general-info)
+* [Screenshots](#screenshots)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Features](#features)
+* [Status](#status)
+* [Inspiration](#inspiration)
+* [Contact](#contact)
 
-## Build
+## General info
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+* [AWS Amplify](https://aws.amazon.com/amplify/?nc1=h_ls) makes it easy to create, configure, and implement scalable mobile and web apps powered by AWS. It provides a framework to integrate the backend with iOS, Android, Web, and React Native frontends. It allows you to select the capabilities needed, e.g. authorization, analytics or offline data sync.
 
-## Running unit tests
+* Within AWS Appsync it is necessary to 'log in with user pools' so a clientID, username and password are required. A user is created in the Userpool then the 'App Clientid' is copied from 'App Clients'. Once authorized mutations can be created.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* DynamoDB is used in the AWS Console to view the tables
 
-## Running end-to-end tests
+* Cognito authorization is used to register and login users.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Screenshots
 
-## Further help
+![Example screenshot](./img/aws-console-query.png)
+![Example screenshot](./img/aws-console-dynamodb.png)
+![Example screenshot](./img/aws-console-appsync-schema.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Technologies
+
+* [Angular v8.0.0](https://angular.io/)
+
+* [Angular CLI v8.0.1](https://cli.angular.io/).
+
+* [aws-amplify v1.1.29](https://www.npmjs.com/package/aws-amplify) core Javascript library. [Documentation](https://aws-amplify.github.io/docs/js/start?platform=purejs)
+
+* [aws-amplify-angular v3.0.4](https://www.npmjs.com/package/aws-amplify-angular) AWS Amplify library package, with building blocks for Angular App development.
+
+## Setup
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app automatically reloads if you change any of the source files.
+
+## Code Examples
+
+* `schema.graphql` extract showing Employee and EmployeeProjects entities. Named entities are used to allow 1 to many relationships.
+
+```graphql
+type Department @model{
+  id: ID!
+  name: String
+  manager: Employee @connection
+  employees: [Employee] @connection(name: "DepartmentEmployees")
+}
+
+type Employee @model{
+  id: ID!
+  name: String
+  age: Int
+  department: Department @connection(name: "DepartmentEmployees")
+  projects: [EmployeeProjects] @connection(name: "EmployeeProjects")
+}
+```
+
+* `schema.graphql` extract showing EmployeeProjects and Project entities. Named entities are used to allow many to many relationships.
+
+```graphql
+type EmployeeProjects @model (queries: null){
+  id: ID!
+  employee: Employee @connection(name: "EmployeeProjects")
+  project: Project @connection(name: "ProjectEmployees")
+}
+
+type Project @model{
+  id: ID!
+  name: String
+  employees: [EmployeeProjects] @connection(name: "ProjectEmployees")
+}
+
+```
+
+## Features
+
+* The AWS Amplify push process creates a ./src/graphql folder structure and generates a new api in the AWS Appsync Console.
+
+## Status & To-Do List
+
+* Status: Working.
+
+* To-Do: Explore AWS Amplify further.
+
+## Inspiration
+
+* [AWS AppSync Tutorial - GraphQL APIs with AppSync, Amplify and Angular - 2nd part, from 26:23](https://www.youtube.com/watch?v=QEMfnr5MO1w)
+
+## Contact
+
+Repo created by [ABateman](https://www.andrewbateman.org) - feel free to contact me!
