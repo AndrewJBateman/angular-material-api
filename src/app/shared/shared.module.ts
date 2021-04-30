@@ -7,6 +7,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ImagePipe } from './pipes/image.pipe';
 import { SanitizeDomPipe } from './pipes/sanitize-dom.pipe';
+import { PosterPipe } from './pipes/poster.pipe';
 
 @NgModule({
   imports: [
@@ -16,11 +17,14 @@ import { SanitizeDomPipe } from './pipes/sanitize-dom.pipe';
     MatToolbarModule
   ],
   declarations: [
+    PosterPipe,
     NavbarComponent,
     ImagePipe,
-    SanitizeDomPipe
+    SanitizeDomPipe,
+    PosterPipe
   ],
   exports: [
+    PosterPipe,
     NavbarComponent,
     ImagePipe,
     SanitizeDomPipe

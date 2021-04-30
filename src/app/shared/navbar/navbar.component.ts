@@ -7,7 +7,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  private _back: boolean;
+  private _back: boolean = false;
   get back(): boolean {
     return this._back;
   }
@@ -16,13 +16,13 @@ export class NavbarComponent implements OnInit {
     this._back = !!back;
   }
 
-  private _title = 'Popular Movies';
+  private _title = 'CryptoCurrency News';
   get title(): string {
     return this._title;
   }
   @Input()
   set title(title: string) {
-    this._title = title ? title : 'Popular Movies';
+    this._title = title ? title : 'CryptoCurrency News';
   }
 
   constructor(private _location: Location) {}

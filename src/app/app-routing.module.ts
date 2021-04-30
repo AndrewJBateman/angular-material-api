@@ -6,11 +6,12 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
-  {
-    path: 'crypto',
-    loadChildren: () =>
-      import('./crypto/crypto.module').then((m) => m.CryptoModule),
-  },
+  // {
+  //   path: 'crypto',
+  //   loadChildren: () =>
+  //     import('./crypto/crypto.module').then((m) => m.CryptoModule),
+  // }
+
   { path: '**', redirectTo: '/' },
 ];
 

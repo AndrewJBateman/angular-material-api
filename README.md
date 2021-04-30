@@ -1,12 +1,18 @@
 # Angular Material Api
 
-* Angular 11 app to display crypto currency information using Angular Material and a REST API 
+* Angular 11 app to display crypto currency information from a REST API using Angular Material
+
+![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/angular-material-api?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues/AndrewJBateman/angular-material-api?style=for-the-badge)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/AndrewJBateman/angular-material-api?style=for-the-badge)
+![GitHub Repo stars](https://img.shields.io/github/stars/AndrewJBateman/angular-material-api?style=for-the-badge)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/AndrewJBateman/angular-material-api?style=for-the-badge)
 
 *** Note: to open web links in a new window use: _ctrl+click on link_**
 
 ## :page_facing_up: Table of contents
 
-* [:zap: Angular Material Table](#zap-angular-material-table)
+* [Angular Material Api](#angular-material-api)
   * [:page_facing_up: Table of contents](#page_facing_up-table-of-contents)
   * [:books: General info](#books-general-info)
   * [:camera: Screenshots](#camera-screenshots)
@@ -16,11 +22,12 @@
   * [:cool: Features](#cool-features)
   * [:clipboard: Status & To-Do List](#clipboard-status--to-do-list)
   * [:clap: Inspiration](#clap-inspiration)
+  * [:file_folder: License](#file_folder-license)
   * [:envelope: Contact](#envelope-contact)
 
 ## :books: General info
 
-* f
+* to generate a component with module and routing: `ng g m my-page --routing=true` && `ng g c my-page -m=my-page`
 
 ## :camera: Screenshots
 
@@ -51,16 +58,16 @@
 
 ## :cool: Features
 
-* F 
+* convention for Typescript variable names: `_example` = private variable, `_crypto$` = private observable
 
 ## :clipboard: Status & To-Do List
 
 * Status: In work
-* To-Do: get crypto service working and add html template to show data. Add pages and do lighthouse tests. Add PWA and SSR.
+* To-Do: get crypto service working and add html template to show data/images. Add API response model. Change color scheme. Add pages. Add PWA and SSR. Do lighthouse tests
 
 ## :clap: Inspiration
 
-* f
+* [Typescript documentation](https://www.typescriptlang.org/docs/)
 
 ## :file_folder: License
 
