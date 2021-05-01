@@ -29,7 +29,7 @@
 
 * to generate a component with module and routing: `ng g m my-page --routing=true` && `ng g c my-page -m=my-page`
 * The Home page displays list of crypto news. The `cryptos.service.ts` files uses the rxjs operator take(1) which just takes the first value and completes. No further logic is involved. If there is no data then take(1) simply returns nothing.
-* The Crypto page displays the crypto news item the user has clicked on. The `crypto.service.ts` file uses the rxjs operator first() which emits just the first item that meets some condition. The first() operator takes an optional predicate function and emits an error notification when no value is matched when the source completed.
+* The News Detail page displays the crypto news item the user has clicked on.
 
 ## :camera: Screenshots
 

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map, take, tap } from 'rxjs/operators';
 
@@ -7,18 +8,19 @@ import {
   CryptoNewsApiResponse,
   CryptoNews,
 } from '../../shared/models/crypto-news';
+
 import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CryptosService {
-  private _cryptoApiUrl = 'https://min-api.cryptocompare.com/data/v2/';
   private _cryptosApiUrl =
     'https://min-api.cryptocompare.com/data/v2/news/?lang=EN';
   private _cryptoNews$: Observable<CryptoNews[]>;
+  public currentItem: any; // used by news detail page
 
-  constructor(private _http: HttpClient) {
+  constructor(private _http: HttpClient, private router: Router) {
     let headers: HttpHeaders = new HttpHeaders();
     headers = headers.append('authorization', environment.cryptoApiKey);
 
@@ -40,8 +42,9 @@ export class CryptosService {
     return this._cryptoNews$;
   }
 
-  public getCryptoNewsDetail(id: string): Observable<any> {
-    const query = this._cryptoApiUrl + id + '?api_key=' + environment.cryptoApiKey;
-    return this._http.get(query);
+  // navigate to news-detail page to show news item detail
+  getNewsDetail(newsItem: CryptoNews) {
+    this.currentItem = newsItem;
+    this.router.navigate(['/news-detail']);
   }
 }

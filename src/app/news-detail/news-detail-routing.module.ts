@@ -4,8 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NewsDetailComponent } from './news-detail.component';
 
 const routes: Routes = [
-  { path: ':id', component: NewsDetailComponent },
-  { path: '', pathMatch: 'full', redirectTo: '/' }
+  { path: '', component: NewsDetailComponent },
 ];
 
 @NgModule({

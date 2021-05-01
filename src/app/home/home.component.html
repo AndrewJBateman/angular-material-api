@@ -3,7 +3,8 @@
   <a
     *ngFor="let newsItem of cryptoNews$ | async"
     mat-list-item
-    [routerLink]="['/', 'news-detail', newsItem.id]"
+    (click)="onGoToNewsDetail(newsItem)"
+    router-direction="forward"
   >
   <img
   mat-list-avatar

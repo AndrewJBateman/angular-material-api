@@ -26,4 +26,10 @@ export class HomeComponent implements OnInit {
   get cryptoNews$(): Observable<CryptoNews[]> {
     return this._cs.cryptoNews$;
   }
+
+  // fetch news detail via cryptos API service
+  onGoToNewsDetail(newsItem: CryptoNews) {
+    console.log("clicked on newsitem", newsItem);
+    this._cs.getNewsDetail(newsItem);
+  }
 }

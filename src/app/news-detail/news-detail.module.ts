@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 
 import { SharedModule } from '../shared/shared.module';
 
@@ -16,7 +16,7 @@ import { NewsDetailComponent } from './news-detail.component';
   imports: [
     CommonModule,
     NewsDetailRoutingModule,
-    MatGridListModule,
+    MatCardModule,
     MatIconModule,
     SharedModule
   ]

@@ -9,9 +9,11 @@ const routes: Routes = [
   {
     path: 'news-detail',
     loadChildren: () =>
-      import('./news-detail/news-detail.module').then((m) => m.NewsDetailModule),
+      import('./news-detail/news-detail.module').then(
+        (m) => m.NewsDetailModule
+      ),
   },
-  { path: '**', redirectTo: '/' }
+  { path: '**', redirectTo: '/' },
 ];
 
 @NgModule({
