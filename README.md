@@ -28,6 +28,8 @@
 ## :books: General info
 
 * to generate a component with module and routing: `ng g m my-page --routing=true` && `ng g c my-page -m=my-page`
+* The Home page displays list of crypto news. The `cryptos.service.ts` files uses the rxjs operator take(1) which just takes the first value and completes. No further logic is involved. If there is no data then take(1) simply returns nothing.
+* The Crypto page displays the crypto news item the user has clicked on. The `crypto.service.ts` file uses the rxjs operator first() which emits just the first item that meets some condition. The first() operator takes an optional predicate function and emits an error notification when no value is matched when the source completed.
 
 ## :camera: Screenshots
 
@@ -36,6 +38,7 @@
 ## :signal_strength: Technologies
 
 * [Angular v11](https://angular.io/)
+* [RxJS](http://reactivex.io/) operators for async observable streams
 * [Firebase v8](https://firebase.google.com) Cloud storage and authentication.
 * [Firebase Tools v9](https://www.npmjs.com/package/firebase-tools) CLI used to manage a Firebase project
 * [AngularFire v6](https://www.npmjs.com/package/@angular/fire) Angular library for Firebase
@@ -62,7 +65,7 @@
 
 ## :clipboard: Status & To-Do List
 
-* Status: In work
+* Status: In work. Add navigation extras with state to pass API data to detail page or use stored API data.
 * To-Do: get crypto service working and add html template to show data/images. Add API response model. Change color scheme. Add pages. Add PWA and SSR. Do lighthouse tests
 
 ## :clap: Inspiration

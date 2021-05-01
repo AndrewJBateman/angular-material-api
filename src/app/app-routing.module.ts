@@ -6,13 +6,12 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
-  // {
-  //   path: 'crypto',
-  //   loadChildren: () =>
-  //     import('./crypto/crypto.module').then((m) => m.CryptoModule),
-  // }
-
-  { path: '**', redirectTo: '/' },
+  {
+    path: 'news-detail',
+    loadChildren: () =>
+      import('./news-detail/news-detail.module').then((m) => m.NewsDetailModule),
+  },
+  { path: '**', redirectTo: '/' }
 ];
 
 @NgModule({

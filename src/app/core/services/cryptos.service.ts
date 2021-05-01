@@ -13,11 +13,10 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root',
 })
 export class CryptosService {
-  private _cryptoApiUrl = '';
+  private _cryptoApiUrl = 'https://min-api.cryptocompare.com/data/v2/';
   private _cryptosApiUrl =
     'https://min-api.cryptocompare.com/data/v2/news/?lang=EN';
   private _cryptoNews$: Observable<CryptoNews[]>;
-  private _cryptoApiResponseMessage = '';
 
   constructor(private _http: HttpClient) {
     let headers: HttpHeaders = new HttpHeaders();
@@ -29,9 +28,6 @@ export class CryptosService {
         take(1),
         tap((res: CryptoNewsApiResponse) => {
           console.log('API status message: ', res.Message);
-          // (res: CryptoNewsApiResponse) => {
-          //   return res.Message;
-          // };
         }),
         map((res) => res.Data),
         catchError((error) => {
@@ -45,7 +41,7 @@ export class CryptosService {
   }
 
   public getCryptoNewsDetail(id: string): Observable<any> {
-    const query = this._cryptoApiUrl + environment.cryptoApiKey;
+    const query = this._cryptoApiUrl + id + '?api_key=' + environment.cryptoApiKey;
     return this._http.get(query);
   }
 }
