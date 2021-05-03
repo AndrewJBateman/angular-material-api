@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: true,
+  title: 'CryptoCurrency News',
+  description: 'PWA displaying crypto currency news',
+  cryptoApiKey: ''
 };

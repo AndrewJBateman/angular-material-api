@@ -21,6 +21,7 @@
     "@angular/platform-browser": "~11.2.11",
     "@angular/platform-browser-dynamic": "~11.2.11",
     "@angular/router": "~11.2.11",
+    "@angular/service-worker": "~11.2.11",
     "ngmeta": "^11.2.0",
     "parse5": "^6.0.1",
     "rxjs": "~6.6.7",

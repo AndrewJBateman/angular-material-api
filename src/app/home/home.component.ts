@@ -14,7 +14,10 @@ import { CryptoNews } from '../shared/models/crypto-news';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent implements OnInit {
-  constructor(private _cs: CryptosService, private _ngmeta: NgMeta) {}
+  constructor(
+    private _cryptoService: CryptosService,
+    private _ngmeta: NgMeta
+  ) {}
 
   ngOnInit(): void {
     this._ngmeta.setAll({
@@ -24,12 +27,11 @@ export class HomeComponent implements OnInit {
   }
 
   get cryptoNews$(): Observable<CryptoNews[]> {
-    return this._cs.cryptoNews$;
+    return this._cryptoService.cryptoNews$;
   }
 
   // fetch news detail via cryptos API service
   onGoToNewsDetail(newsItem: CryptoNews) {
-    console.log("clicked on newsitem", newsItem);
-    this._cs.getNewsDetail(newsItem);
+    this._cryptoService.getNewsDetail(newsItem);
   }
 }

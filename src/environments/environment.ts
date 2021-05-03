@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  title: 'CryptoCurrency Prices',
-  description: 'PWA displaying crypto currencies',
+  title: 'CryptoCurrency News',
+  description: 'PWA displaying crypto currency news',
   cryptoApiKey: ''
 };
 

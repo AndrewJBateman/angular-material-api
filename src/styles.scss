@@ -33,30 +33,11 @@ h1, h2, h3, h4, h5, h6, label, p {
   color: $text !important;
 }
 
-.navbar-photo {
-  height: 40px;
+.navbar-image {
+  height: 32px;
   max-height: 100%;
 }
 
 .navbar-spacer {
   flex: 1 1 auto;
-}
-
-.grid-image {
-  background: no-repeat rgba(0, 0, 0, 0);
-  background-size: contain;
-  background-position: center;
-  height: 100%;
-  width: auto;
-}
-
-.gutter {
-  figure.mat-figure {
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-}
-
-.mat-grid-tile .mat-figure {
-  display: block !important;
 }

@@ -27,8 +27,9 @@
 
 ## :books: General info
 
-* to generate a component with module and routing: `ng g m my-page --routing=true` && `ng g c my-page -m=my-page`
-* The Home page displays list of crypto news. The `cryptos.service.ts` files uses the rxjs operator take(1) which just takes the first value and completes. No further logic is involved. If there is no data then take(1) simply returns nothing.
+* To generate a component with module and routing: `ng g m my-page --routing=true` && `ng g c my-page -m=my-page`
+* The Home page displays a list of crypto news.
+  * The `cryptos.service.ts` files uses the rxjs operator take(1) which just takes the first value and completes. No further logic is involved. If there is no data then take(1) simply returns nothing.
 * The News Detail page displays the crypto news item the user has clicked on.
 
 ## :camera: Screenshots
@@ -38,18 +39,20 @@
 ## :signal_strength: Technologies
 
 * [Angular v11](https://angular.io/)
+* [Angular Service Workers](https://angular.io/guide/service-worker-getting-started) added for Progressive Web App funcionality
+* [http-server](https://www.npmjs.com/package/http-server) command line http server to test PWA
 * [RxJS](http://reactivex.io/) operators for async observable streams
-* [Firebase v8](https://firebase.google.com) Cloud storage and authentication.
-* [Firebase Tools v9](https://www.npmjs.com/package/firebase-tools) CLI used to manage a Firebase project
-* [AngularFire v6](https://www.npmjs.com/package/@angular/fire) Angular library for Firebase
 * [Express v4](https://www.npmjs.com/package/express) Node.js framework
 
 ## :floppy_disk: Setup
 
 * Install dependencies using `npm i`
-* Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-* Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-* Run `ng update` to update Angular
+* `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* `ng build --prod` to build the project with PWA. The build artifacts will be stored in the `dist/angular-material-api` directory.
+* Add `defer` to `dist/angular-material-api/index.html` to make loading of styles asynchronous, e.g. `<link rel="stylesheet" href="styles.d6d9df648b6debafe22a.css" defer>`
+* `npm i -g http-server` to globally install a http server to run the PWA with service workers
+* `http-server -p 8080 -c-1 dist/angular-material-api` to view on a dev server
+* `ng update` to update Angular
 
 ## :computer: Code Examples
 
@@ -62,15 +65,17 @@
 ## :cool: Features
 
 * convention for Typescript variable names: `_example` = private variable, `_crypto$` = private observable
+* Seems like you do not need the API key to get news from the [CryptoCompare API](https://min-api.cryptocompare.com/)
 
 ## :clipboard: Status & To-Do List
 
-* Status: In work. Add navigation extras with state to pass API data to detail page or use stored API data.
-* To-Do: get crypto service working and add html template to show data/images. Add API response model. Change color scheme. Add pages. Add PWA and SSR. Do lighthouse tests
+* Status: Working PWA with 81% lighthouse score and 100& accessibility, Best Practises, SEO.
+* To-Do: Add Apple Touch Icon. Correct image sizing on Home page, add nav menu about and contact page. Add SSR. Add more crypto info pages.
 
 ## :clap: Inspiration
 
 * [Typescript documentation](https://www.typescriptlang.org/docs/)
+* [Material Theming](https://material.io/design/material-theming/overview.html#using-material-theming)
 
 ## :file_folder: License
 

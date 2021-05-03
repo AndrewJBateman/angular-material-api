@@ -1,22 +1,22 @@
-<!-- <app-navbar [back]="true" (click)="goBack()"> </app-navbar> -->
-
+<head>
+  <meta name="description" content="Crypto news item detail" />
+</head>
 <app-navbar [back]="true" [title]="currentItem.source"></app-navbar>
-<mat-card class="mat-elevation-z4 mat-card" aria-label="crypto news item">
-  <img
-    mat-card-image
-    [src]="currentItem.imageurl"
-    [alt]="currentItem.title"
-    class="card-image"
-  />
-  <mat-card-content class="card-content">
-    <p class="title-style">{{ currentItem.title }}</p>
-    <p class="content-style">{{ currentItem.body }}</p>
+
+<mat-card>
+  <mat-card-title-group>
+    <img mat-card-sm-image *ngIf="currentItem.imageurl" [src]="currentItem.imageurl" />
+    <mat-card-title>{{ currentItem.title }}</mat-card-title>
+    <mat-card-subtitle *ngIf="currentItem.source_info.name">
+      {{ currentItem.source_info.name }}. Published: {{ currentItem.published_on | date }}
+    </mat-card-subtitle>
+  </mat-card-title-group>
+  <mat-card-content>
+    <p *ngIf="currentItem.body">
+      {{ currentItem.body }}
+    </p>
   </mat-card-content>
   <mat-card-footer>
-    <mat-icon class="date-icon" color="accent">history</mat-icon>
-    {{ currentItem.published_on | date}}
-    <div fxFlex></div>
-    <mat-icon class="source-icon" color="accent">event_note</mat-icon
-    >{{ currentItem.source }}
+
   </mat-card-footer>
 </mat-card>
