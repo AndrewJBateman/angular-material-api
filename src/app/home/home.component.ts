@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { NgMeta } from 'ngmeta';
-import { Observable } from 'rxjs';
+import { Observable } from  'rxjs';
 
 import { environment } from '../../environments/environment';
 

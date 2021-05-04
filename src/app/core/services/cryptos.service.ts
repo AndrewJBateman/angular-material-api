@@ -31,9 +31,9 @@ export class CryptosService {
         tap((res: CryptoNewsApiResponse) => {
           console.log('API status message: ', res.Message);
         }),
-        map((res) => res.Data),
-        catchError((error) => {
-          return throwError('API data not found!', error);
+        map((res: CryptoNewsApiResponse) => res.Data),
+        catchError((err) => {
+          return throwError('API data not found!', err);
         })
       );
   }
