@@ -17,6 +17,6 @@ import { HomeComponent } from './home.component';
     ScrollingModule,
     MatListModule,
     SharedModule,
-  ]
+  ],
 })
-export class HomeModule { }
+export class HomeModule {}

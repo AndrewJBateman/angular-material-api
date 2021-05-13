@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./home/home.module').then((mod) => mod.HomeModule),
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    loadChildren: () =>
+      import('./home/home.module').then((mod) => mod.HomeModule),
   },
   {
     path: 'news-detail',
@@ -14,18 +20,14 @@ const routes: Routes = [
       ),
   },
   {
-    path: "about",
+    path: 'about',
     loadChildren: () =>
-      import("./about/about.module").then(
-        (mod) => mod.AboutModule
-      ),
+      import('./about/about.module').then((mod) => mod.AboutModule),
   },
   {
-    path: "contact",
+    path: 'contact',
     loadChildren: () =>
-      import("./contact/contact.module").then(
-        (mod) => mod.ContactModule
-      ),
+      import('./contact/contact.module').then((mod) => mod.ContactModule),
   },
   { path: '**', redirectTo: '/' },
 ];
@@ -33,7 +35,6 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
-      preloadingStrategy: PreloadAllModules,
       relativeLinkResolution: 'legacy',
     }),
   ],

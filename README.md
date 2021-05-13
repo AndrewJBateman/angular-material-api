@@ -2,13 +2,12 @@
 
 * Angular 11 app to display crypto currency information from a REST API using Angular Material
 
-![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/angular-material-api?style=for-the-badge)
-![GitHub issues](https://img.shields.io/github/issues/AndrewJBateman/angular-material-api?style=for-the-badge)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/AndrewJBateman/angular-material-api?style=for-the-badge)
-![GitHub Repo stars](https://img.shields.io/github/stars/AndrewJBateman/angular-material-api?style=for-the-badge)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/AndrewJBateman/angular-material-api?style=for-the-badge)
+* **Note:** to open web links in a new window use: _ctrl+click on link_
 
-*** Note: to open web links in a new window use: _ctrl+click on link_**
+![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/angular-material-api?style=plastic)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/AndrewJBateman/angular-material-api?style=plastic)
+![GitHub Repo stars](https://img.shields.io/github/stars/AndrewJBateman/angular-material-api?style=plastic)
+![GitHub last commit](https://img.shields.io/github/last-commit/AndrewJBateman/angular-material-api?style=plastic)
 
 ## :page_facing_up: Table of contents
 
@@ -29,8 +28,10 @@
 
 * To generate a component with module and routing: `ng g m my-page --routing=true` && `ng g c my-page -m=my-page`
 * The Home page displays a list of crypto news.
-  * The `cryptos.service.ts` files uses the rxjs operator take(1) which just takes the first value and completes. No further logic is involved. If there is no data then take(1) simply returns nothing.
+* The `cryptos.service.ts` files uses the rxjs operator take(1) which just takes the first value and completes. No further logic is involved. If there is no data then take(1) simply returns nothing.
 * The News Detail page displays the crypto news item the user has clicked on.
+* Convention for Typescript variable names: `_example` = private variable, `_crypto$` = private observable
+* Seems like you do not need the API key to get news from the [CryptoCompare API](https://min-api.cryptocompare.com/)
 
 ## :camera: Screenshots
 
@@ -64,8 +65,7 @@
 
 ## :cool: Features
 
-* convention for Typescript variable names: `_example` = private variable, `_crypto$` = private observable
-* Seems like you do not need the API key to get news from the [CryptoCompare API](https://min-api.cryptocompare.com/)
+* Lazy-loading of all modules
 
 ## :clipboard: Status & To-Do List
 

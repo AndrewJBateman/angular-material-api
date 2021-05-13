@@ -4,9 +4,11 @@ nav {
 
 .nav-link {
   color: white !important;
+  margin-right: 8px;
+  margin-top: 4px;
 }
 
-.nav-link-active {
+.active-link {
   color: #f5c8f1 !important;
   font-weight: bold;
 }

@@ -1,35 +1,39 @@
-<mat-toolbar color="primary">
-  <a mat-button *ngIf="back" (click)="goBack($event)" href="/">
-    <mat-icon>arrow_back</mat-icon>
-  </a>
-  <span>{{ title }}</span>
-  <span class="navbar-spacer"></span>
-  <a
-    class="top-nav-link"
-    routerLink='/about'
-    routerLinkActive="top-link-active"
-    aria-label="about nav button"
-    mat-button
-    >About</a
-  >
-  <a
-    class="top-nav-link"
-    routerLink="/contact"
-    routerLinkActive="top-link-active"
-    aria-label="contact nav button"
-    mat-button
-    >Contact</a
-  >
-  <a
-    mat-button
-    href="https://github.com/AndrewJBateman/angular-material-api"
-    target="_blank"
-    rel="noopener"
-  >
-    <img
-      src="./assets/github-white.svg"
-      alt="Github Logo"
-      class="align-middle navbar-image"
-    />
-  </a>
+<mat-toolbar color="primary" sticky>
+  <mat-toolbar-row>
+    <a
+      class="nav-link"
+        routerLink="/"
+        routerLinkActive="active-link"
+        aria-label="home nav link button"
+        mat-button
+        ><app-svg-info></app-svg-info
+      >
+    </a>
+    <span>{{ title }}</span>
+    <span class="navbar-spacer"></span>
+      <a
+        class="nav-link"
+        routerLink="/about"
+        routerLinkActive="active-link"
+        aria-label="about nav link button"
+        mat-button
+        ><app-svg-info></app-svg-info
+      ></a>
+      <a
+        class="nav-link"
+        routerLink="/contact"
+        routerLinkActive="active-link"
+        aria-label="contact nav link button"
+        mat-button
+        ><app-svg-contact></app-svg-contact
+      ></a>
+      <a
+        mat-button
+        href="https://github.com/AndrewJBateman/angular-material-api"
+        target="_blank"
+        rel="noopener"
+      >
+        <app-svg-github></app-svg-github>
+      </a>
+  </mat-toolbar-row>
 </mat-toolbar>
