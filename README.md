@@ -1,7 +1,6 @@
 # Angular Material Api
 
-* Angular 11 app to display crypto currency information from a REST API using Angular Material
-
+* Angular app to display crypto currency information from a REST API using Angular Material
 * **Note:** to open web links in a new window use: _ctrl+click on link_
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/angular-material-api?style=plastic)
@@ -35,7 +34,7 @@
 
 ## :camera: Screenshots
 
-* f
+* tba
 
 ## :signal_strength: Technologies
 
