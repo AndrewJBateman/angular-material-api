@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NgMeta } from 'ngmeta';
+// import { NgMeta } from 'ngmeta';
 
 import { CryptosService } from '../core/services/cryptos.service';
 
@@ -15,7 +15,7 @@ export class NewsDetailComponent implements OnInit {
   constructor(
     private _cryptoService: CryptosService,
     private _route: ActivatedRoute,
-    private _ngmeta: NgMeta,
+    // private _ngmeta: NgMeta,
     public router: Router
   ) {}
 

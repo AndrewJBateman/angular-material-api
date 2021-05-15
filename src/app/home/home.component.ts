@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { NgMeta } from 'ngmeta';
+// import { NgMeta } from 'ngmeta';
 import { Observable } from  'rxjs';
 
 import { environment } from '../../environments/environment';
@@ -16,14 +16,14 @@ import { CryptoNews } from '../shared/models/crypto-news';
 export class HomeComponent implements OnInit {
   constructor(
     private _cryptoService: CryptosService,
-    private _ngmeta: NgMeta
+    // private _ngmeta: NgMeta
   ) {}
 
   ngOnInit(): void {
-    this._ngmeta.setAll({
-      title: environment.title,
-      description: environment.description,
-    });
+    // this._ngmeta.setAll({
+    //   title: environment.title,
+    //   description: environment.description,
+    // });
   }
 
   get cryptoNews$(): Observable<CryptoNews[]> {
