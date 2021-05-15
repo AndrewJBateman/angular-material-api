@@ -38,8 +38,8 @@
 
 ## :signal_strength: Technologies
 
-* [Angular v11](https://angular.io/)
-* [Angular Service Workers](https://angular.io/guide/service-worker-getting-started) added for Progressive Web App funcionality
+* [Angular v12](https://angular.io/)
+* [Angular Service Workers v12](https://angular.io/guide/service-worker-getting-started) added for Progressive Web App funcionality
 * [http-server](https://www.npmjs.com/package/http-server) command line http server to test PWA
 * [RxJS v7](http://reactivex.io/) operators for async observable streams
 * [Express v4](https://www.npmjs.com/package/express) Node.js framework
