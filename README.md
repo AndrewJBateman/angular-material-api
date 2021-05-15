@@ -47,6 +47,7 @@
 ## :floppy_disk: Setup
 
 * Install dependencies using `npm i`
+* `npm prune` to remove unused npm modules
 * `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 * `ng build --prod` to build the project with PWA. The build artifacts will be stored in the `dist/angular-material-api` directory.
 * Add `defer` to `dist/angular-material-api/index.html` to make loading of styles asynchronous, e.g. `<link rel="stylesheet" href="styles.d6d9df648b6debafe22a.css" defer>`
