@@ -10,7 +10,7 @@
 
 ## :page_facing_up: Table of contents
 
-* [Angular Material Api](#angular-material-api)
+* [:zap: Angular Material Api](#angular-material-api)
   * [:page_facing_up: Table of contents](#page_facing_up-table-of-contents)
   * [:books: General info](#books-general-info)
   * [:camera: Screenshots](#camera-screenshots)
@@ -70,7 +70,10 @@
 ## :clipboard: Status & To-Do List
 
 * Status: Working PWA with 81% lighthouse score and 100& accessibility, Best Practises, SEO.
-* To-Do: Add Apple Touch Icon. Correct image sizing on Home page, add nav menu about and contact page. Add SSR. Add more crypto info pages.
+* To-Do: News detail back button
+* To-Do: Add Apple Touch Icon. Correct image sizing on Home page, add nav menu about and contact page.
+* To-Do: Add SSR.
+* To-Do: Add more crypto info pages.
 
 ## :clap: Inspiration
 
