@@ -3,12 +3,11 @@ nav {
 }
 
 .nav-link {
-  color: white !important;
   margin-right: 8px;
-  margin-top: 4px;
+  margin-top: 4px !important;
 }
 
 .active-link {
-  color: #f5c8f1 !important;
+  border-bottom: 5px solid rgb(142, 252, 115) !important;
   font-weight: bold;
 }
