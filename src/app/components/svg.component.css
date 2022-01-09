@@ -1,9 +1,10 @@
 svg {
   width: 28px;
   height: 28px;
-  fill: white;
   background: inherit;
   background-color: inherit;
+  fill: white;
+  margin-top: 4px;
 }
 
 img {
