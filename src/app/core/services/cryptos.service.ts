@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { Observable, throwError } from 'rxjs';
+import { Observable } from 'rxjs';
 import { catchError, map, take, tap } from 'rxjs/operators';
 
 import {
@@ -33,7 +33,7 @@ export class CryptosService {
         }),
         map((res: CryptoNewsApiResponse) => res.Data),
         catchError((err) => {
-          return throwError('API data not found!', err);
+          throw 'error in getting API data. Details: ' + err;
         })
       );
   }
