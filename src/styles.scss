@@ -3,7 +3,7 @@
 @include mat.core();
 
 $primary: mat.define-palette(mat.$indigo-palette, 900);
-$accent: mat.define-palette(mat.$amber-palette, A500, A100, A400);
+$accent: mat.define-palette(mat.$amber-palette, 500, A100, A400);
 $warn: mat.define-palette(mat.$red-palette);
 $theme: mat.define-light-theme($primary, $accent, $warn);
 @include mat.all-component-themes($theme);
