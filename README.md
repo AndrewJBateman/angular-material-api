@@ -1,6 +1,6 @@
 # Angular Material Api
 
-* Angular app to display crypto currency information from a REST API using Angular Material
+* Angular Progressive Web App (PWA) to display crypto currency information from a REST API using Angular Material
 * **Note:** to open web links in a new window use: _ctrl+click on link_
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/angular-material-api?style=plastic)
@@ -10,7 +10,7 @@
 
 ## :page_facing_up: Table of contents
 
-* [:zap: Angular Material Api](#angular-material-api)
+* [Angular Material Api](#angular-material-api)
   * [:page_facing_up: Table of contents](#page_facing_up-table-of-contents)
   * [:books: General info](#books-general-info)
   * [:camera: Screenshots](#camera-screenshots)
@@ -27,19 +27,19 @@
 
 * To generate a component with module and routing: `ng g m my-page --routing=true` && `ng g c my-page -m=my-page`
 * The Home page displays a list of crypto news.
-* The `cryptos.service.ts` files uses the rxjs operator take(1) which just takes the first value and completes. No further logic is involved. If there is no data then take(1) simply returns nothing.
+* The `cryptos.service.ts` files uses the RxJS operator take(1) which just takes the first value and completes. No further logic is involved. If there is no data then take(1) simply returns nothing.
 * The News Detail page displays the crypto news item the user has clicked on.
 * Convention for Typescript variable names: `_example` = private variable, `_crypto$` = private observable
 * Seems like you do not need the API key to get news from the [CryptoCompare API](https://min-api.cryptocompare.com/)
 
 ## :camera: Screenshots
 
-* tba
+![Example screenshot](./imgs/crypto.png)
 
 ## :signal_strength: Technologies
 
-* [Angular v13](https://angular.io/)
-* [Angular Service Workers v13](https://angular.io/guide/service-worker-getting-started) added for Progressive Web App funcionality
+* [Angular v14](https://angular.io/)
+* [Angular Service Workers v14](https://angular.io/guide/service-worker-getting-started) added for Progressive Web App functionality
 * [http-server](https://www.npmjs.com/package/http-server) command line http server to test PWA
 * [RxJS v7](http://reactivex.io/) operators for async observable streams
 
@@ -56,10 +56,30 @@
 
 ## :computer: Code Examples
 
-* f
+* `cryptos.service.ts` gets crypto price data as an Observable from an API using the RxJS take(1) method for auto-unsubscribe
 
 ```typescript
+  constructor(private _http: HttpClient, private router: Router) {
+    let headers: HttpHeaders = new HttpHeaders();
+    headers = headers.append('authorization', environment.cryptoApiKey);
 
+    this._cryptoNews$ = this._http
+      .get<CryptoNewsApiResponse>(this._cryptosApiUrl, { headers })
+      .pipe(
+        take(1),
+        tap((res: CryptoNewsApiResponse) => {
+          console.log('API status message: ', res.Message);
+        }),
+        map((res: CryptoNewsApiResponse) => res.Data),
+        catchError((err) => {
+          throw "error in getting API data. Details: " + err;
+        })
+      );
+  }
+
+  get cryptoNews$(): Observable<CryptoNews[]> {
+    return this._cryptoNews$;
+  }
 ```
 
 ## :cool: Features
