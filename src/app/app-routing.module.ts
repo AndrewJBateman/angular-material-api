@@ -30,8 +30,9 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
-      relativeLinkResolution: 'legacy',
-    }),
+    relativeLinkResolution: 'legacy',
+    initialNavigation: 'enabledBlocking'
+}),
   ],
   exports: [RouterModule],
 })

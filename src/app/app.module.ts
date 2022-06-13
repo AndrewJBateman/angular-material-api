@@ -17,7 +17,7 @@ import { NavbarModule } from './shared/navbar/navbar.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserTransferStateModule,
     AppRoutingModule,
     BrowserAnimationsModule,
