@@ -1,4 +1,4 @@
-# Angular Material Api
+# Angular Material API
 
 * Angular Progressive Web App (PWA) to display crypto currency information from a REST API using Angular Material
 * **Note:** to open web links in a new window use: _ctrl+click on link_
@@ -10,7 +10,7 @@
 
 ## :page_facing_up: Table of contents
 
-* [Angular Material Api](#angular-material-api)
+* [Angular Material API](#angular-material-api)
   * [:page_facing_up: Table of contents](#page_facing_up-table-of-contents)
   * [:books: General info](#books-general-info)
   * [:camera: Screenshots](#camera-screenshots)
@@ -91,7 +91,6 @@
 * Status: Working PWA with 81% lighthouse score and 100& accessibility, Best Practises, SEO.
 * To-Do: News detail back button
 * To-Do: Add Apple Touch Icon. Correct image sizing on Home page, add nav menu about and contact page.
-* To-Do: Add SSR.
 * To-Do: Add more crypto info pages.
 
 ## :clap: Inspiration
