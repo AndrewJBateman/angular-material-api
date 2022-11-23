@@ -28,9 +28,9 @@ export class CryptosService {
       .get<CryptoNewsApiResponse>(this._cryptosApiUrl, { headers })
       .pipe(
         take(1),
-        tap((res: CryptoNewsApiResponse) => {
-          console.log('API status message: ', res.Message);
-        }),
+        // tap((res: CryptoNewsApiResponse) => {
+        //   console.log('API status message: ', res.Message);
+        // }),
         map((res: CryptoNewsApiResponse) => res.Data),
         catchError((err) => {
           throw 'error in getting API data. Details: ' + err;
