@@ -1,21 +1,30 @@
 <head>
   <meta name="description" content="Crypto news item detail" />
+  <link rel="preconnect" href="https://images.cryptocompare.com" />
+  <link rel="preconnect" href="https://resources.cryptocompare.com" />
 </head>
-
-<mat-card appearance="outlined">
-  <mat-card-title-group>
-    <img mat-card-sm-image *ngIf="currentItem.imageurl" [src]="currentItem.imageurl" />
-    <mat-card-title>{{ currentItem.title }}</mat-card-title>
-    <mat-card-subtitle *ngIf="currentItem.source_info.name">
-      {{ currentItem.source_info.name }}. Published: {{ currentItem.published_on | date }}
-    </mat-card-subtitle>
-  </mat-card-title-group>
-  <mat-card-content>
-    <p *ngIf="currentItem.body">
-      {{ currentItem.body }}
-    </p>
-  </mat-card-content>
-  <mat-card-footer>
-
-  </mat-card-footer>
-</mat-card>
+<div class="container">
+  <mat-card appearance="outlined">
+    <mat-card-header class="card-header">
+      <mat-card-title-group>
+        <mat-card-title>{{ currentItem.title }}</mat-card-title>
+        <mat-card-subtitle *ngIf="currentItem.source_info.name">
+          {{ currentItem.source_info.name }}, {{ currentItem.published_on | date }}
+        </mat-card-subtitle>
+        <img
+          width="80"
+          height="80"
+          mat-card-sm-image
+          *ngIf="currentItem.imageurl"
+          [ngSrc]="currentItem.imageurl"
+          priority
+        />
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content class="card-content">
+      <p *ngIf="currentItem.body">
+        {{ currentItem.body }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,23 +1,24 @@
 <head>
   <meta name="description" content="Crypto news items list" />
 </head>
-
-<mat-list>
-  <a
-    *ngFor="let newsItem of cryptoNews$ | async"
-    mat-list-item
-    (click)="onGoToNewsDetail(newsItem)"
-    router-direction="forward"
-    href="/news-detail"
-  >
-  <img
-  mat-list-avatar
-  width="40"
-  height="40"
-  [src]="newsItem.imageurl"
-  [alt]="newsItem.title"
-/>
-  <h4 mat-line>{{ newsItem.title }}</h4>
-  <p mat-line> {{ newsItem.source_info.name }} </p>
-  </a>
-</mat-list>
+<div class="container">
+  <mat-list>
+    <mat-list-item
+      class="news-list"
+      *ngFor="let newsItem of cryptoNews$ | async"
+      (click)="onGoToNewsDetail(newsItem)"
+      router-direction="forward"
+      href="/news-detail"
+    >
+      <img
+        matListItemAvatar
+        width="40"
+        height="40"
+        [ngSrc]="newsItem.imageurl"
+        [alt]="newsItem.title"
+      />
+      <span matListItemTitle>{{ newsItem.title }}</span>
+      <span matListItemLine>{{ newsItem.source_info.name }}</span>
+    </mat-list-item>
+  </mat-list>
+</div>

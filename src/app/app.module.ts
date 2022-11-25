@@ -1,7 +1,4 @@
-import {
-  BrowserModule,
-  BrowserTransferStateModule,
-} from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -11,14 +8,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { SharedModule} from './shared/shared.module';
+import { SharedModule } from './shared/shared.module';
 import { NavbarModule } from './shared/navbar/navbar.module';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    BrowserTransferStateModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     CoreModule.forRoot(),
@@ -27,7 +23,7 @@ import { NavbarModule } from './shared/navbar/navbar.module';
       enabled: environment.production,
       registrationStrategy: 'registerWhenStable:30000',
     }),
-    SharedModule
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

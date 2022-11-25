@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatListModule } from '@angular/material/list';
 
@@ -17,6 +17,7 @@ import { HomeComponent } from './home.component';
     ScrollingModule,
     MatListModule,
     SharedModule,
+    NgOptimizedImage,
   ],
 })
 export class HomeModule {}
