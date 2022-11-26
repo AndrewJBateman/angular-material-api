@@ -9,7 +9,7 @@
       <mat-card-title-group>
         <mat-card-title>{{ currentItem.title }}</mat-card-title>
         <mat-card-subtitle *ngIf="currentItem.source_info.name">
-          {{ currentItem.source_info.name }}, {{ currentItem.published_on | date }}
+          {{ currentItem.source_info.name }} - {{ currentItem.published_on  * 1000 | date }}
         </mat-card-subtitle>
         <img
           width="80"
