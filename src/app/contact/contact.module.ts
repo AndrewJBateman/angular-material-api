@@ -15,4 +15,4 @@ import { ContactComponent } from './contact.component';
   ],
   exports: [ContactComponent]
 })
-export class ContactModule { }
+export default class ContactModule { }

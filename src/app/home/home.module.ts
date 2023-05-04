@@ -20,4 +20,4 @@ import { HomeComponent } from './home.component';
     NgOptimizedImage,
   ],
 })
-export class HomeModule {}
+export default class HomeModule {}

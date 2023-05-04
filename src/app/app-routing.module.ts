@@ -4,25 +4,19 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () =>
-      import('./home/home.module').then((mod) => mod.HomeModule),
+    loadChildren: () => import('./home/home.module'),
   },
   {
     path: 'news-detail',
-    loadChildren: () =>
-      import('./news-detail/news-detail.module').then(
-        (m) => m.NewsDetailModule
-      ),
+    loadChildren: () => import('./news-detail/news-detail.module'),
   },
   {
     path: 'about',
-    loadChildren: () =>
-      import('./about/about.module').then((mod) => mod.AboutModule),
+    loadChildren: () => import('./about/about.module'),
   },
   {
     path: 'contact',
-    loadChildren: () =>
-      import('./contact/contact.module').then((mod) => mod.ContactModule),
+    loadChildren: () => import('./contact/contact.module'),
   },
   { path: '**', redirectTo: '/' },
 ];
@@ -30,8 +24,8 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
-    initialNavigation: 'enabledBlocking'
-}),
+      initialNavigation: 'enabledBlocking',
+    }),
   ],
   exports: [RouterModule],
 })

@@ -19,4 +19,4 @@ import { NewsDetailComponent } from './news-detail.component';
     SharedModule,
   ],
 })
-export class NewsDetailModule {}
+export default class NewsDetailModule {}
