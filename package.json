@@ -30,28 +30,28 @@
     "@nguniversal/express-engine": "^16.0.0",
     "express": "^4.18.2",
     "parse5": "^7.1.2",
-    "rxjs": "^7.8.0",
+    "rxjs": "^7.8.1",
     "tslib": "^2.5.0",
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^16.0.0-rc.4",
-    "@angular/cli": "^16.0.0-rc.4",
+    "@angular-devkit/build-angular": "^16.0.0",
+    "@angular/cli": "^16.0.0",
     "@angular/compiler-cli": "^16.0.0",
     "@nguniversal/builders": "^16.0.0",
     "@types/express": "^4.17.17",
     "@types/jasmine": "~4.3.1",
-    "@types/node": "^18.14.0",
+    "@types/node": "^18.16.3",
     "codelyzer": "^6.0.2",
-    "jasmine-core": "~4.5.0",
+    "jasmine-core": "~4.6.0",
     "jasmine-spec-reporter": "~7.0.0",
-    "karma": "~6.4.1",
-    "karma-chrome-launcher": "~3.1.1",
+    "karma": "~6.4.2",
+    "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "^2.0.0",
     "protractor": "~7.0.0",
     "ts-node": "~10.9.1",
-    "typescript": "^4.9.5"
+    "typescript": "^5.0.4"
   }
 }
