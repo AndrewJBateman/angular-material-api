@@ -1,16 +1,25 @@
 @use '@angular/material' as mat;
-@import '@angular/material/theming';
-@include mat.all-component-typographies();
+
+// Use the default configuration.
+$my-typography: mat.define-typography-config();
+@include mat.typography-hierarchy($my-typography);
+
 @include mat.core();
 
 $primary: mat.define-palette(mat.$indigo-palette, 900);
 $accent: mat.define-palette(mat.$amber-palette, 500, A100, A400);
 $warn: mat.define-palette(mat.$red-palette);
-$theme: mat.define-light-theme($primary, $accent, $warn);
-@include mat.all-component-themes($theme);
+$theme: mat.define-light-theme((
+  color: (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+),
+density: 0,
+));
 
 $text: #000;
-$background: rgb(245, 243, 243);
+$background: rgb(37, 36, 105);
 
 body {
   font-family: "Roboto", sans-serif;
@@ -25,7 +34,7 @@ body {
 
 app-navbar {
   position: fixed;
-  width: 100vw;
+  width: 99vw;
   top: 0;
   left: 0;
   z-index: 1;
