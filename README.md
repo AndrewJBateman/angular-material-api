@@ -47,10 +47,9 @@
 ## :floppy_disk: Setup
 
 * Install dependencies using `npm i`
-* `npm prune` to remove unused npm modules
 * `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 * `npm run build` to build the project with PWA. The build artifacts will be stored in the `dist/angular-material-api` directory.
-* Add `defer` to `dist/angular-material-api/index.html` to make loading of styles asynchronous, e.g. `<link rel="stylesheet" href="styles.d6d9df648b6debafe22a.css" defer>`
+* Add `defer` to `dist/angular-material-api/browser/index.html` to make loading of styles asynchronous, e.g. `<link rel="stylesheet" href="styles.d6d9df648b6debafe22a.css" defer>`
 * `npm i -g http-server` to globally install a http server to run the PWA with service workers
 * `http-server -p 8080 -c-1 dist/angular-material-api/browser` then open either link to view on a dev server
 * `ng update` to update Angular
@@ -89,8 +88,8 @@
 
 ## :clipboard: Status & To-Do List
 
-* Status: Working PWA with xxx lighthouse score and 100& accessibility, Best Practises, SEO.
-* To-Do: News detail back button
+* Status: Working app with 93% lighthouse score and 100& accessibility, Best Practises, SEO.
+* To-Do: Fix PWA. Add News detail back button
 * To-Do: Add Apple Touch Icon. Correct image sizing on Home page, add nav menu about and contact page.
 * To-Do: Add more crypto info pages.
 
@@ -105,4 +104,4 @@
 
 ## :envelope: Contact
 
-* Repo created by [ABateman](https://github.com/AndrewJBateman), email: gomezbateman@yahoo.com
+* Repo created by [ABateman](https://github.com/AndrewJBateman), email: '<gomezbateman@yahoo.com>'
