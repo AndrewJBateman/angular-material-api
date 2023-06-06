@@ -88,7 +88,7 @@
 
 ## :clipboard: Status & To-Do List
 
-* Status: Working app with 93% lighthouse score and 100& accessibility, Best Practises, SEO.
+* Status: Working app with 93% lighthouse score and 100% accessibility, Best Practises, SEO. PWA not working.
 * To-Do: Fix PWA. Add News detail back button
 * To-Do: Add Apple Touch Icon. Correct image sizing on Home page, add nav menu about and contact page.
 * To-Do: Add more crypto info pages.
